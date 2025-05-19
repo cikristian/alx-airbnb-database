@@ -18,3 +18,9 @@ CREATE INDEX idx_properties_location ON properties(location);
 CREATE INDEX idx_properties_price ON properties(price);
 CREATE INDEX idx_properties_rating ON properties(rating);
 CREATE INDEX idx_properties_created_at ON properties(created_at);
+
+
+EXPLAIN ANALYZE
+SELECT *
+FROM bookings
+WHERE user_id = 3 AND booking_date >= '2024-01-01';
