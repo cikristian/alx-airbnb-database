@@ -6,6 +6,10 @@ WHERE ratings > (
     WHERE ratings = 4.0
 );
 
-SELECT COUNT(user_id)
-FROM bookings
-WHERE user_id > 3;
+SELECT DISTINCT user_id
+FROM bookings AS b1
+WHERE (
+    SELECT COUNT(*)
+    FROM bookings AS b2
+    WHERE b2.user_id = b1.user_id
+) > 3;
