@@ -7,6 +7,7 @@ SELECT *
 FROM properties
 LEFT JOIN reviews
 ON properties.property_id = reviews.property_id
+ORDER BY reviews.rating DESC
 
 SELECT *
 FROM users
