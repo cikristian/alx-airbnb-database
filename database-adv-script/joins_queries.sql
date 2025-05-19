@@ -5,7 +5,7 @@ ON bookings.user_id = users.id
 
 SELECT *
 FROM properties
-LEFT JOIN properties
+LEFT JOIN reviews
 ON properties.property_id = reviews.property_id
 
 SELECT *
